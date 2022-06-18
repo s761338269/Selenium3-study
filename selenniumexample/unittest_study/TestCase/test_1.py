@@ -8,14 +8,17 @@
 # TestModle()测试类继承TestWebUI()类
 from unittest_study.TestCase.Myunit import TestWebUI
 
-
+# TestModle()测试类继承TestWebUI()类
 class TestModle(TestWebUI):
     def test_QQlogin(self):
-        """进入QQ邮箱登录界面"""
-        self.dr.get('https://mail.qq.com')
-        self.assertEqual(self.dr.title, '登录QQ邮箱', '跳转登录页面失败')
+        # """进入QQ邮箱登录界面"""
+        # self.dr.get('https://mail.qq.com')
+        # self.assertEqual(self.dr.title, '登录QQ邮箱', '跳转登录页面失败')
+        print(1)
 
     def test_WBlogin(self):
-        """进入猫眼电影首页"""
-        self.dr.get('https://www.maoyan.com/')
-        self.assertEqual(self.dr.title, '猫眼电影 - 娱乐看猫眼', '页面跳转失败')
+        # """进入猫眼电影首页"""
+        # self.dr.get('https://www.maoyan.com/')
+        # self.assertEqual(self.dr.title, '猫眼电影 - 娱乐看猫眼', '页面跳转失败')
+        print(1)
+
