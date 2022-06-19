@@ -1,0 +1,13 @@
+userNull:
+  username: ""
+  password: ""
+  assertText: "请输入账号密码"
+
+userPass:
+  username: "7613386475"
+  password: ""
+  assertText: "请输入账号密码"
+userFlase:
+  username: "7613386475"
+  password: "123456"
+  assertText: "请输入正确的账号密码"
