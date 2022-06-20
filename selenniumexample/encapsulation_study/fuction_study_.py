@@ -34,37 +34,38 @@ def assert_Login_text(*assertText):
     """获取登录成功后的验证信息"""
     return Element_Locatior(*assertText).text
 
+if __name__ == '__main__':
 
-user_loc = (By.ID,'phone')
-pwd_loc = (By.ID,'pwd')
-btn_loc = (By.ID,'loginBtn')
-suceeLogin_loc = (By.CSS_SELECTOR,'#siteName')
-suceeLogin_loc1 = (By.CSS_SELECTOR,'#err-txt')
+    user_loc = (By.ID,'phone')
+    pwd_loc = (By.ID,'pwd')
+    btn_loc = (By.ID,'loginBtn')
+    suceeLogin_loc = (By.CSS_SELECTOR,'#siteName')
+    suceeLogin_loc1 = (By.CSS_SELECTOR,'#err-txt')
 
 
-driver = webdriver.Firefox()
-driver.get('https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com')
-driver.maximize_window()
-sleep(3)
-driver.refresh()
-input_username('17306687410',*user_loc)
-input_username('a767826912', *pwd_loc)
-click_btn(*btn_loc)
-try:
-    element = WebDriverWait(driver, 3, 0.5).until(expected_conditions.presence_of_element_located(suceeLogin_loc))
-    if element.text =='广州航海学院':
-        print('测试通过')
-    else:
-        print('测试失败')
-except Exception as message:
-    element = WebDriverWait(driver, 3, 0.5).until(expected_conditions.presence_of_element_located(suceeLogin_loc1))
-    if element.text =='手机号或密码错误':
-        print(message)
-        print(element.text)
-    else:
-        print('测试失败')
+    driver = webdriver.Firefox()
+    driver.get('https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com')
+    driver.maximize_window()
+    sleep(3)
+    driver.refresh()
+    input_username('17306687410',*user_loc)
+    input_username('a767826912', *pwd_loc)
+    click_btn(*btn_loc)
+    try:
+        element = WebDriverWait(driver, 3, 0.5).until(expected_conditions.presence_of_element_located(suceeLogin_loc))
+        if element.text =='广州航海学院':
+            print('测试通过')
+        else:
+            print('测试失败')
+    except Exception as message:
+        element = WebDriverWait(driver, 3, 0.5).until(expected_conditions.presence_of_element_located(suceeLogin_loc1))
+        if element.text =='手机号或密码错误':
+            print(message)
+            print(element.text)
+        else:
+            print('测试失败')
 
-driver.quit()
+    driver.quit()
 
 
 
