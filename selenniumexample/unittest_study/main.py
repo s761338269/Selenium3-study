@@ -11,9 +11,16 @@ import HTMLTestRunner
 # report_path = 'E:\\pythonProject\\selennium3_study\\selenniumexample\\unittest_study\\Reports\\'
 # test_path = r'E:\\pythonProject\\selennium3_study\\selenniumexample\\unittest_study\\TestCase'
 # 第一步，报告的存放地址
-file = open(os.path.join(os.path.dirname(__file__),'reports',time.strftime("%Y_%m_%d_%H_%M_%S")+ 'report.html'),'wb')
-# 生成的报告描述
-run = HTMLTestRunner.HTMLTestRunner(stream=file, title="测试报告",description="执行结果")
-#用例目录
-dis = unittest.defaultTestLoader.discover(os.path.join(os.path.dirname(__file__),'TestCase'),pattern='test_*.py')
-run.run(dis)
+def getAllCases():
+    """获取testcase下的所有测试模块"""
+    dis = unittest.defaultTestLoader.discover(os.path.join(os.path.dirname(__file__),'TestCase'),pattern='test_*.py')
+    return dis
+def RunMain():
+    """生成测试报告，写入指定Report是目录"""
+
+    file = open(os.path.join(os.path.dirname(__file__),'reports',time.strftime("%Y_%m_%d_%H_%M_%S")+ 'report.html'),'wb')
+    # 生成的报告描述
+    run = HTMLTestRunner.HTMLTestRunner(stream=file, title="测试报告",description="执行结果").run(getAllCases())
+
+if __name__ == '__main__':
+    RunMain()
