@@ -1,0 +1,9 @@
+2022-06-21 00:12:41,879-logTest-CRITICAL-info
+2022-06-21 00:12:41,879-logTest-INFO-开始：输出Logging 日志
+2022-06-21 00:12:41,879-logTest-DEBUG-这是显示Debug级别的日志信息
+2022-06-21 00:12:41,879-logTest-WARNING-这是显示Warning级别的日志信息
+2022-06-21 00:12:41,879-logTest-INFO-结束：输出Logging日志
+2022-06-21 00:13:56,126-logTest-CRITICAL-info
+2022-06-21 00:13:56,127-logTest-INFO-开始：输出Logging 日志
+2022-06-21 00:13:56,127-logTest-WARNING-这是显示Warning级别的日志信息
+2022-06-21 00:13:56,127-logTest-INFO-结束：输出Logging日志

@@ -3,6 +3,7 @@
 # @file     :helper.py
 # @author   : 声培 
 # @Time     : 2022/6/20 0020 20:12
+import logging
 import os.path
 
 import xlrd
@@ -15,7 +16,7 @@ class Helper:
         :param rowx:是行数
         :return: 返回的一共有多少行
         """
-        book = xlrd.open_workbook(r'..\data\data.xls','r')
+        book = xlrd.open_workbook(r'E:\pythonProject\selennium3_study\selenniumexample\PO_study\data\data.xls','r')
         table = book.sheet_by_index(0)
         return table.row_values(rowx)
 
@@ -52,3 +53,15 @@ class Helper:
         :return:
         """
         return os.path.join(os.path.dirname(os.path.dirname(__file__)),filepath,filename)
+
+    def log(self,log_content):
+        """定义日志级别"""
+        logFile = logging.FileHandler('log.txt', 'a', encoding='utf-8')
+        # 设置日志格式
+        fmt = logging.Formatter(fmt='%(asctime)s-%(name)s-%(levelname)s-%(message)s')
+        logFile.setFormatter(fmt)
+        # 定义日志
+        logger1 = logging.Logger('logTest', level=logging.DEBUG)
+        logger1.addHandler(logFile)
+        logger1.info(log_content)
+        logFile.close()
