@@ -17,8 +17,8 @@ class TestSendMail(unittest.TestCase):
     @ddt.data(*Data)
     def test_sendMail(self,mail):
         smtpserver = 'smtp.qq.com'      #QQ邮箱服务器
-        sender = '761338269@qq.com'     #发送者邮箱
-        psw = 'bznipopoeqngbchg'        #配置邮箱客户端生成的QQ邮箱授权码，乱写的，不可泄露，需要重新生成
+        sender = '76*****69@qq.com'     #发送者邮箱
+        psw = 'bznip******gbchg'        #配置邮箱客户端生成的QQ邮箱授权码，乱写的，不可泄露，需要重新生成
         receiver = mail                 #接收者邮箱
         port = 465                      #QQ邮箱服务器默认端口号
 

@@ -9,10 +9,10 @@ from email.mime.text import MIMEText    #导入纯文本的邮件模板类
 from email.mime.multipart import MIMEMultipart
 
 smtpserver = 'smtp.qq.com'      #QQ邮箱服务器
-sender = '761338269@qq.com'     #发送者邮箱
-psw = 'bznipopoeqngbchg'        #配置邮箱客户端生成的QQ邮箱授权码，乱写的，不可泄露，需要重新生成
-receiver = '2478703203@qq.com'  #接收者邮箱
-# receiver = '2660676822@qq.com'  #接收者邮箱
+sender = '76****69@qq.com'     #发送者邮箱
+psw = 'bzn******bchg'        #配置邮箱客户端生成的QQ邮箱授权码，乱写的，不可泄露，需要重新生成
+receiver = '247****3@qq.com'  #接收者邮箱
+# receiver = '266*****822@qq.com'  #接收者邮箱
 port = 465                      #QQ邮箱服务器默认端口号
 
 filepath  = r'./1.jpeg'
