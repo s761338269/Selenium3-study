@@ -5,7 +5,9 @@
 # @Time     : 2022/6/20 0020 20:12
 import logging
 import os.path
-
+# cmd 运行pytest找不到路径时可以用
+import sys
+sys.path.append(os.getcwd())
 import xlrd
 
 
@@ -16,7 +18,9 @@ class Helper:
         :param rowx:是行数
         :return: 返回的一共有多少行
         """
-        book = xlrd.open_workbook(r'E:\pythonProject\selennium3_study\selenniumexample\PO_study\data\data.xls','r')
+        # unittest执行就用这个r'..\data\data.xls'
+        # pytest执行用'.\data\data.xls'
+        book = xlrd.open_workbook(r'..\data\data.xls','r')
         table = book.sheet_by_index(0)
         return table.row_values(rowx)
 
